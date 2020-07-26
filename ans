@@ -1,0 +1,22 @@
+def myfind(array, target):
+    ver_list = []
+
+    for x in range(len(array)):
+        hor_joined = ''.join(array[x])
+
+        for y in range(len(array)):
+            ver_list.append(array[y][x])
+
+        ver_joined = ''.join(ver_list)
+
+        if target == hor_joined or target == ver_joined:
+            return True
+
+        ver_list=[]
+
+
+
+print(myfind([['F', 'A', 'C', 'I'],
+ ['O', 'B', 'Q', 'P'],
+ ['A', 'N', 'O', 'B'],
+ ['M', 'A', 'S', 'S']],'FOAM'))
