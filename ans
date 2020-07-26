@@ -1,3 +1,5 @@
+## Brute Force way (O(n^2))
+
 def myfind(array, target):
     ver_list = []
 
@@ -15,8 +17,26 @@ def myfind(array, target):
         ver_list=[]
 
 
+## Better Force way (O(m*n))
 
-print(myfind([['F', 'A', 'C', 'I'],
+def myfind(array, target):
+    ver_list = []
+
+    for x in range(len(array)):
+        hor_joined = ''.join(array[x])
+
+        if target == hor_joined:
+            return True
+
+    x=[list(x) for x in zip(*array)]
+    for i in range(len(x)):
+        hor_joined2=''.join(x[i])
+
+        if target == hor_joined2:
+            return True
+
+
+myfind([['F', 'A', 'C', 'I'],
  ['O', 'B', 'Q', 'P'],
  ['A', 'N', 'O', 'B'],
- ['M', 'A', 'S', 'S']],'FOAM'))
+ ['M', 'A', 'S', 'S']],'FOAM')
